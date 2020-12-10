@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>Name:</strong>
+  <%= @song.name %>
+</h1>
+
+<p>
+<%= (link_to @song.artist.name, artist_path(@song.artist)) if @song.artist %> 
+</p>
+<p>
+<%= (link_to @song.genre.name, genre_path(@song.genre)) if @song.genre %>
+</p>
+<p>
+  <strong>Artist:</strong>
+  <%= @song.artist_id %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @song.genre_id %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @song.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @song.updated_at %>
+</p>
+
+<%= link_to 'Edit', edit_song_path(@song) %> |
+<%= link_to 'Back', songs_path %>
